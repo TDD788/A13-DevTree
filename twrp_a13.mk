@@ -14,10 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-DEVICE_PATH := device/samsung/a31
+DEVICE_PATH := device/samsung/a13
 
 # Release name
-PRODUCT_RELEASE_NAME := a31
+PRODUCT_RELEASE_NAME := a13
 
 # Inherit from common AOSP config
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
@@ -27,7 +27,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/a31/device.mk)
+$(call inherit-product, device/samsung/a13/device.mk)
 
 - PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(DEVICE_PATH)/recovery/root,recovery/root)
 + PRODUCT_COPY_FILES += $(call cc_prebuilt_binary, sgdisk)
@@ -37,8 +37,8 @@ $(call inherit-product, device/samsung/a31/device.mk)
 + PRODUCT_COPY_FILES += $(call cc_prebuilt_binary, lz4)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := a31
-PRODUCT_NAME := twrp_a31
+PRODUCT_DEVICE := a13
+PRODUCT_NAME := twrp_a13
 PRODUCT_MODEL := SM-A135x
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
