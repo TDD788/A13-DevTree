@@ -5,8 +5,8 @@ sudo chmod +rwx out/host/linux-x86/bin/avbtool
 chmod a+x device/samsung/a13/prebuilt/avb/mkbootimg
 add_lunch_combo twrp_a13-eng
 
-FDEVICE1="a12s"
-CURR_DEVICE="a12s"
+FDEVICE1="a13"
+CURR_DEVICE="a13"
 
 RED_BACK="\e[101m"
 RED="\e[91m"
@@ -20,7 +20,7 @@ export LC_ALL="C"
 echo "General Configurations"
 export OF_MAINTAINER="TheDarkDeath788"
 export FOX_BUILD_TYPE="Stable"
-export FOX_VERSION="R12.1_48"
+export FOX_VERSION="R12.1_2"
 export FOX_VARIANT="AOSP"
 
 # Binaries & Tools
@@ -33,12 +33,12 @@ export FOX_USE_UNZIP_BINARY=1
 export FOX_USE_XZ_UTILS=1
 
 # Target Device
-export FOX_TARGET_DEVICES="a12s"
-export TARGET_DEVICE_ALT="a12s, a12sub, SM-A127M, SM-A127F"
-export FOX_BUILD_DEVICE="a12s"
+export FOX_TARGET_DEVICES="a13"
+export TARGET_DEVICE_ALT="a13, a13, SM-A135M, SM-A135F"
+export FOX_BUILD_DEVICE="a13"
 	
 export_build_vars(){
-	echo -e "${GREEN}Exporting build vars from the a12s tree${RESET}"
+	echo -e "${GREEN}Exporting build vars from the a13 tree${RESET}"
 	#Important Build Flags
 	export FOX_VANILLA_BUILD=1
 	export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
@@ -101,7 +101,7 @@ set_env_var(){
         echo -e "${RED_BACK}Environment Variable CURR_DEVICE not set... Aborting${RESET}"
         echo "Set to the codename of the device you're building for"
         echo -e "${GREEN}Example :${RESET}"
-        echo " export CURR_DEVICE=a12s"
+        echo " export CURR_DEVICE=a13"
         exit 1
 }
 
@@ -109,7 +109,7 @@ var_not_eq(){
         echo -e "${RED_BACK}CURR_DEVICE not equal to a12s${RESET}"
         echo -e "${RED_BACK}CURR_DEVICE = $CURR_DEVICE${RESET}"
         echo -e "${RED}If this is a mistake, then export CURR_DEVICE to the correct codename${RESET}"
-        echo -e "${RED}Skipping a12s specific build vars...${RESET}"
+        echo -e "${RED}Skipping a13 specific build vars...${RESET}"
 }
 
 case "$CURR_DEVICE" in
